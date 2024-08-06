@@ -5,7 +5,7 @@ This is a simple Python server that offers an NLP API for text completion that i
 
 ### Running the server
 
-#### Local
+#### Locally
 
 Prerequisites:
 - python3
@@ -33,7 +33,7 @@ python3 main.py
 Prerequisites:
 - docker
 
-Create the docker image:
+Build the docker image:
 ```bash
 docker build -t nlp-server .
 ```
@@ -43,11 +43,11 @@ Run the image that hosts the server at 8000:
 docker run -d -p 8000:8000 nlp-server
 ```
 
-### Testing the server
+### Testing
 
 #### cURL
 
-Example requests can be set to an NLP server running locally using the following command:
+Example requests can be set to the NLP server running locally using the following command:
 ```bash
 curl -X POST "http://127.0.0.1:8000/suggestions/" \
 -H "Content-Type: application/json" \
