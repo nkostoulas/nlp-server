@@ -5,10 +5,9 @@ This is a simple Python server that offers an NLP API based on pre-trained model
 
 ### Running the server
 
-#### Docker
+#### Docker
 
-TODO
-
+To do...
 
 #### Local
 
