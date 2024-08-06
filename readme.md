@@ -7,7 +7,7 @@ This is a simple Python server that offers an NLP API based on pre-trained model
 
 #### Docker
 
-To do...
+TODO
 
 #### Local
 
