@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: &app nlp-server
+  namespace: mlops
+  labels:
+    app: *app
+spec:
+  selector:
+    matchLabels:
+      app: *app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 50%
+  template:
+    metadata:
+      labels:
+        app: *app
+    spec:
+      containers:
+      - name: nlp-server
+        image: nlp-server:latest
+        ports:
+        - containerPort: 8000
+          name: http

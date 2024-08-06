@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nlp-server
+  namespace: mlops
+  labels:
+    app: nlp-server
+spec:
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+      nodePort: 31000
+  selector:
+    app: nlp-server

@@ -43,6 +43,22 @@ Run the image that hosts the server at 8000:
 docker run -d -p 8000:8000 nlp-server
 ```
 
+#### Kubernetes
+
+Prerequisites:
+- docker
+- kubernetes
+
+Build the docker image:
+```bash
+docker build -t nlp-server .
+```
+
+Apply kubernetes resources:
+```bash
+kubernetes apply -f k8s/
+```
+
 ### Testing
 
 #### cURL
