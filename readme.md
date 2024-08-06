@@ -15,7 +15,7 @@ Create a local virtual environment and activate:
 
 ```bash
 python3 -m venv env
-`source env/bin/activate
+source env/bin/activate
 ```
 
 Install the required dependencies:
