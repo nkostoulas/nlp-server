@@ -1,7 +1,7 @@
 
 ## Simple NLP server
 
-This is a simple Python server that offers an NLP API based on pre-trained models.
+This is a simple Python server that offers an NLP API for text completion that is based on pre-trained models.
 
 ### Running the server
 
