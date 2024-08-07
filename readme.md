@@ -42,9 +42,9 @@ Build the docker image:
 docker build -t nlp-server .
 ```
 
-Run the image that hosts the server at 8000:
+Run the image that hosts the server at 8001:
 ```bash
-docker run -d -p 8000:8000 nlp-server
+docker run -d -p 8001:8001 nlp-server
 ```
 
 #### Kubernetes
@@ -68,7 +68,7 @@ kubernetes apply -f k8s/
 
 Example requests can be set to the NLP server running locally using the following command:
 ```bash
-curl -X POST "http://127.0.0.1:8000/suggestions/" \
+curl -X POST "http://127.0.0.1:8001/suggestions/" \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <token>" \
 -d '{"sentence": "The weather today is <blank>."}'
