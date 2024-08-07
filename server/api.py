@@ -7,6 +7,8 @@ from transformers import pipeline
 from server.auth import get_auth_token
 from server.models import SuggestionsRequest, _BLANK_PLACEHOLDER, unmasker, sentiment_analysis
 
+# TODO(nikolaos): make these values configurable
+_MAX_CACHING = 64
 _MAX_SAMPLING = 20
 _MAX_SUGGESTIONS = 5
 
@@ -18,7 +20,7 @@ def get_suggestions(request: SuggestionsRequest, token: str = Depends(get_auth_t
     suggestions = cached_suggestions(request.sentence)
     return {"suggestions": ", ".join(suggestions)}
 
-@lru_cache(maxsize=32)
+@lru_cache(maxsize=_MAX_CACHING)
 def cached_suggestions(sentence: str):
     # Replace _BLANK_PLACEHOLDER with the fill-mask token and get predictions
     masked_input = sentence.replace(_BLANK_PLACEHOLDER, unmasker.tokenizer.mask_token)
