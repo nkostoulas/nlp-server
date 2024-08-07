@@ -1,2 +1,5 @@
 # ignore venv
 env/
+
+# ignore secrets dir
+secrets/

@@ -23,6 +23,8 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
+Create an auth token file containing an auth token under `secrets/token`.
+
 Run the application:
 ```bash
 python3 main.py
@@ -67,5 +69,6 @@ Example requests can be set to the NLP server running locally using the followin
 ```bash
 curl -X POST "http://127.0.0.1:8000/suggestions/" \
 -H "Content-Type: application/json" \
+-H "Authorization: Bearer <token>" \
 -d '{"sentence": "The weather today is <blank>."}'
 ```
