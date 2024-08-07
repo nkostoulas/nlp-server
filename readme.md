@@ -96,3 +96,9 @@ Docs for the API are available directly from the server at the `/docs` path.
 Locally or with docker these can be found at `127.0.0.1:8001/docs`.
 
 For minikube these docs are accessible at `<minikube-ip>:31000/docs`.
+
+### Caching
+
+Basic caching has been implemented in-memory on a per application instance level. This can later
+be extended to use distributed caching, e.g. with Redis, which can be shared by multiple instances
+of the same application when running the `nlp-server` in a distributed fashion with Kubernetes.
