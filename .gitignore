@@ -3,3 +3,10 @@ env/
 
 # ignore secrets dir
 secrets/
+
+# Ignore Python files
+*.pyc
+*.pyo
+
+# Ignore __pycache__ directories
+__pycache__/
