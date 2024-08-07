@@ -52,6 +52,8 @@ docker run -d -p 8001:8001 nlp-server
 Prerequisites:
 - kubernetes
 
+The kubernetes resources under `k8s/` used a pre-built image (as above) pushed to Docker Hub.
+
 Create kubernetes namespace:
 ```bash
 kubectl create namespace mlops
@@ -66,7 +68,7 @@ kubernetes apply -f k8s/
 
 #### cURL
 
-Example requests can be set to the NLP server running locally using the following command:
+Example requests can be sent to the NLP server running locally using the following command:
 ```bash
 curl -X POST "http://127.0.0.1:8001/suggestions/" \
 -H "Content-Type: application/json" \
