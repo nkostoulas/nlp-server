@@ -20,8 +20,8 @@ spec:
         app: *app
     spec:
       containers:
-      - name: nlp-server
-        image: nlp-server:latest
+      - name: server
+        image: nkostoulas/nlp-server:0.1
         ports:
-        - containerPort: 8000
+        - containerPort: 8001
           name: http

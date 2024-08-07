@@ -35,6 +35,8 @@ python3 main.py
 Prerequisites:
 - docker
 
+Create an auth token file containing an auth token under `secrets/token`.
+
 Build the docker image:
 ```bash
 docker build -t nlp-server .
@@ -48,12 +50,11 @@ docker run -d -p 8000:8000 nlp-server
 #### Kubernetes
 
 Prerequisites:
-- docker
 - kubernetes
 
-Build the docker image:
+Create kubernetes namespace:
 ```bash
-docker build -t nlp-server .
+kubectl create namespace mlops
 ```
 
 Apply kubernetes resources:
@@ -68,6 +69,19 @@ kubernetes apply -f k8s/
 Example requests can be set to the NLP server running locally using the following command:
 ```bash
 curl -X POST "http://127.0.0.1:8000/suggestions/" \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <token>" \
+-d '{"sentence": "The weather today is <blank>."}'
+```
+
+If testing the kubernetes setup with minikube you can get the minikube ip address with:
+```bash
+minikube ip
+```
+
+and send the same curl command as follows:
+```bash
+curl -X POST "http://<minikube-ip>:31000/suggestions/" \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <token>" \
 -d '{"sentence": "The weather today is <blank>."}'
