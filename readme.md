@@ -88,3 +88,11 @@ curl -X POST "http://<minikube-ip>:31000/suggestions/" \
 -H "Authorization: Bearer <token>" \
 -d '{"sentence": "The weather today is <blank>."}'
 ```
+
+### Documentation
+
+Docs for the API are available directly from the server at the `/docs` path.
+
+Locally or with docker these can be found at `127.0.0.1:8001/docs`.
+
+For minikube these docs are accessible at `<minikube-ip>:31000/docs`.
