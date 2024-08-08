@@ -23,7 +23,7 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
-Create an auth token file containing an auth token under `secrets/token`.
+Create an auth token file containing a token for authentication under `secrets/token`.
 
 Run the application:
 ```bash
@@ -35,14 +35,14 @@ python3 main.py
 Prerequisites:
 - docker
 
-Create an auth token file containing an auth token under `secrets/token`.
+Create an auth token file containing a token for authentication under `secrets/token`.
 
 Build the docker image:
 ```bash
 docker build -t nlp-server .
 ```
 
-Run the image that hosts the server at 8001:
+Run the image that hosts the server:
 ```bash
 docker run -d -p 8001:8001 nlp-server
 ```
@@ -52,7 +52,7 @@ docker run -d -p 8001:8001 nlp-server
 Prerequisites:
 - kubernetes
 
-The kubernetes resources under `k8s/` used a pre-built image (as above) pushed to Docker Hub.
+The kubernetes resources under `k8s/` use a pre-built (as above) image pushed to Docker Hub.
 
 Create kubernetes namespace:
 ```bash
